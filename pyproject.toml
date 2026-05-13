@@ -14,5 +14,8 @@ dependencies = [
     "pytest",
     "rdflib>=7.1.1",
     "transformers>=4.56.0",
-    "vllm>=0.20.1",
+    "vllm>=0.7.3",
 ]
+
+[tool.uv]
+extra-index-url = ["https://wheels.vllm.ai/"]
