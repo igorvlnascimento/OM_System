@@ -89,7 +89,7 @@ class TransformersModelRegistry(ModelRegistry):
         self,
         model_name: str,
         device: str = "cuda",
-        attn_implementation: str = "eager",
+        attn_implementation: str = "sdpa",
         dtype: torch.dtype | None = None,
     ) -> dict:
         from transformers import AutoModel, AutoTokenizer
