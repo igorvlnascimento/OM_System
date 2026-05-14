@@ -2,7 +2,7 @@ from pathlib import Path
 
 
 class EDOALParser:
-    def __init__(self, root="reference"):
+    def __init__(self, root="references"):
         self.root = Path(root)
 
     def parse(self, dataset, ontology_source_name, ontology_target_name):
