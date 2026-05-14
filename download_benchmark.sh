@@ -117,20 +117,20 @@ CONF_PAIRS=(
     #ekaw-edas
 )
 for pair in "${CONF_PAIRS[@]}"; do
-    download "$CONF_SRC/$pair/reference.rdf" "references/conference/$pair.owl"
+    download "$CONF_SRC/$pair/reference.rdf" "references/conference/$pair.edoal"
 done
 
 echo "[references/enslaved]"
-download "$BASE_URL/popenslaved/enslaved-wikidata/reference.rdf"  references/enslaved/enslaved-wikidata.owl
+download "$BASE_URL/popenslaved/enslaved-wikidata/reference.rdf"  references/enslaved/enslaved-wikidata.edoal
 
 echo "[references/geolink]"
-download "$BASE_URL/geolink/gbo-gmo/reference.rdf"  references/geolink/gbo-gmo.owl
+download "$BASE_URL/geolink/gbo-gmo/reference.rdf"  references/geolink/gbo-gmo.edoal
 
 echo "[references/hydrography]"
-download "$BASE_URL/hydrography/cree-swo/reference.rdf"                     references/hydrography/cree-swo.owl
-download "$BASE_URL/hydrography/hydro3-swo/reference.rdf"                   references/hydrography/hydro3-swo.owl
-download "$BASE_URL/hydrography/hydrOntology_native-swo/reference.rdf"      references/hydrography/hydrOntology-swo.owl
-download "$BASE_URL/hydrography/hydrOntology_translated-swo/reference.rdf"  references/hydrography/hydrOntology_translated-swo.owl
+download "$BASE_URL/hydrography/cree-swo/reference.rdf"                     references/hydrography/cree-swo.edoal
+download "$BASE_URL/hydrography/hydro3-swo/reference.rdf"                   references/hydrography/hydro3-swo.edoal
+download "$BASE_URL/hydrography/hydrOntology_native-swo/reference.rdf"      references/hydrography/hydrOntology-swo.edoal
+download "$BASE_URL/hydrography/hydrOntology_translated-swo/reference.rdf"  references/hydrography/hydrOntology_translated-swo.edoal
 
 echo "[references/taxon]"
 download "$BASE_URL/taxon/taxon-agrovoc/reference.edoal"  references/taxon/taxon-agrovoc.edoal
