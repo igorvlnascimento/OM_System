@@ -1,0 +1,53 @@
+<ontology1>
+    http://example.org/library#Book1 http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://example.org/library#Book
+    http://example.org/library#Author1 http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://example.org/library#Author
+</ontology1>
+<ontology2>
+    http://example.org/publishing#Book1 http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://example.org/publishing#Book
+    http://example.org/publishing#Author1 http://www.w3.org/1999/02/22-rdf-syntax-ns#type http://example.org/publishing#Author
+</ontology2>
+<result>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+      xmlns:alext="http://exmo.inrialpes.fr/align/ext/1.0/"
+      xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#"
+      xmlns:edoal="http://ns.inria.org/edoal/1.0/#"
+      xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+      <Alignment>
+        <xml>yes</xml>
+        <level>2EDOAL</level>
+        <type>**</type>
+        <onto1>
+          <Ontology rdf:about="http://example.org/library#" />
+        </onto1>
+        <onto2>
+          <Ontology rdf:about="http://example.org/publishing#" />
+        </onto2>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Class rdf:about="http://example.org/library#Book" />
+            </entity1>
+            <entity2>
+              <edoal:Class rdf:about="http://example.org/publishing#Book" />
+            </entity2>
+            <relation>=</relation>
+            <measure>1.0</measure>
+          </Cell>
+        </map>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Class rdf:about="http://example.org/library#Author" />
+            </entity1>
+            <entity2>
+              <edoal:Class rdf:about="http://example.org/publishing#Author" />
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+      </Alignment>
+    </rdf:RDF>
+</result>

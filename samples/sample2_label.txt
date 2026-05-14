@@ -1,0 +1,142 @@
+<ontology1>
+    ontology type Ontology  
+    acceptedPaper type Class
+    Author type Class
+    Conference type Class
+    isAuthorOf type ObjectProperty 
+    Author isAuthorOf AcceptedPaper
+    AcceptedPaper isPresentedAt Conference
+    Author hasFirstName string
+    Author hasLastName string
+</ontology1>
+<ontology2>
+    ontology type Ontology
+    Paper type Class
+    Decision type Class
+    Acceptance type class 
+    Acceptance subClassOf Decision
+    Paper hasAcceptance Acceptance
+    Author type Class
+    Conference type Class
+    hasAuthor type ObjectProperty
+    Paper hasAuthor Author
+    isSubmittedTo type ObjectProperty
+    Paper isSubmittedTo Conference
+    hasFullName type DatatypeProperty 
+    Author hasFullName string
+</ontology2>
+<result>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#" xmlns:alext="http://exmo.inrialpes.fr/align/ext/1.0/" xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#" xmlns:edoal="http://ns.inria.org/edoal/1.0/#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+      <Alignment>
+        <xml>yes</xml>
+        <level>2EDOAL</level>
+        <type>**</type>
+        <onto1>
+          <Ontology rdf:about="http://example.org/ontology1/" />
+        </onto1>
+        <onto2>
+          <Ontology rdf:about="http://example.org/ontology2/" />
+        </onto2>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Class rdf:about="http://example.org/ontology1/AcceptedPaper" />
+            </entity1>
+            <entity2>
+              <edoal:Relation>
+                <edoal:and rdf:parseType="Collection">
+                  <edoal:RelationDomainRestriction>
+                    <edoal:class>
+                      <edoal:Class rdf:about="http://example.org/ontology2/Paper" />
+                    </edoal:class>
+                  </edoal:RelationDomainRestriction>
+                  <edoal:Relation>
+                    <edoal:and rdf:parseType="Collection">
+                      <edoal:RelationCoDomainRestriction>
+                        <edoal:class>
+                          <edoal:Class rdf:about="http://example.org/ontology2/Acceptance" />
+                        </edoal:class>
+                      </edoal:RelationCoDomainRestriction>
+                      <edoal:Relation rdf:about="http://example.org/ontology2/hasAcceptance" />
+                    </edoal:and>
+                  </edoal:Relation>
+                </edoal:and>
+              </edoal:Relation>
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Relation>
+                <edoal:compose rdf:parseType="Collection">
+                  <edoal:Relation rdf:resource="http://example.org/ontology1/hasFirstName" />
+                  <edoal:Relation rdf:resource="http://example.org/ontology1/hasLastName" />
+                </edoal:compose>
+              </edoal:Relation>
+            </entity1>
+            <entity2>
+              <edoal:Relation rdf:resource="http://example.org/ontology2/hasFullName" />
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Class rdf:about="http://example.org/ontology1/Author" />
+            </entity1>
+            <entity2>
+              <edoal:Class rdf:about="http://example.org/ontology2/Author" />
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Class rdf:about="http://example.org/ontology1/Conference" />
+            </entity1>
+            <entity2>
+              <edoal:Class rdf:about="http://example.org/ontology2/Conference" />
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Relation>
+                <edoal:inverse>
+                  <edoal:Relation rdf:about="http://example.org/ontology1/isAuthorOf" />
+                </edoal:inverse>
+              </edoal:Relation>
+            </entity1>
+            <entity2>
+              <edoal:Relation rdf:about="http://example.org/ontology2/hasAuthor" />
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+        <map>
+          <Cell>
+            <entity1>
+              <edoal:Relation rdf:about="http://example.org/ontology1/isPresentedAt" />
+            </entity1>
+            <entity2>
+              <edoal:Relation rdf:about="http://example.org/ontology2/isSubmittedTo" />
+            </entity2>
+            <relation>=</relation>
+            <measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.0</measure>
+          </Cell>
+        </map>
+      </Alignment>
+    </rdf:RDF>
+</result>
