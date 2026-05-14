@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+shopt -s inherit_errexit
 
 # Downloads datasets and references from:
 # https://github.com/liseda-lab/complex-OM-benchmark
@@ -11,12 +12,51 @@ BASE_URL="https://raw.githubusercontent.com/liseda-lab/complex-OM-benchmark/main
 CONFERENCE_VERSION="popconference-0-v1"
 
 LFS_BATCH_URL="https://github.com/liseda-lab/complex-OM-benchmark.git/info/lfs/objects/batch"
+LFS_MAX_RETRIES=5
+
+resolve_lfs_href() {
+    local oid="$1"
+    local size="$2"
+    local payload response href attempt sleep_s
+    payload="{\"operation\":\"download\",\"transfers\":[\"basic\"],\"objects\":[{\"oid\":\"$oid\",\"size\":$size}]}"
+
+    for ((attempt = 1; attempt <= LFS_MAX_RETRIES; attempt++)); do
+        response=$(curl -sS --fail-with-body -X POST \
+            -H "Content-Type: application/vnd.git-lfs+json" \
+            -H "Accept: application/vnd.git-lfs+json" \
+            -d "$payload" \
+            "$LFS_BATCH_URL" 2>/dev/null) || response=""
+
+        if [[ -n "$response" ]]; then
+            href=$(printf '%s' "$response" | python3 -c '
+import json, sys
+try:
+    d = json.load(sys.stdin)
+    print(d["objects"][0]["actions"]["download"]["href"])
+except Exception:
+    sys.exit(1)
+' 2>/dev/null) || href=""
+            if [[ -n "$href" ]]; then
+                printf '%s' "$href"
+                return 0
+            fi
+        fi
+
+        sleep_s=$((attempt * 2))
+        echo "  LFS batch API attempt $attempt/$LFS_MAX_RETRIES failed for oid ${oid:0:12}…, retrying in ${sleep_s}s" >&2
+        sleep "$sleep_s"
+    done
+
+    echo "ERROR: LFS batch API failed after $LFS_MAX_RETRIES attempts for oid $oid" >&2
+    return 1
+}
 
 download() {
     local url="$1"
     local dest="$2"
     local tmp
     tmp=$(mktemp)
+    trap 'rm -f "$tmp"' RETURN
 
     wget -q -O "$tmp" "$url"
 
@@ -24,14 +64,8 @@ download() {
         local oid size lfs_href
         oid=$(grep "^oid sha256:" "$tmp" | sed 's/oid sha256://')
         size=$(grep "^size " "$tmp" | sed 's/size //')
-        lfs_href=$(curl -s -X POST \
-            -H "Content-Type: application/vnd.git-lfs+json" \
-            -H "Accept: application/vnd.git-lfs+json" \
-            -d "{\"operation\":\"download\",\"transfers\":[\"basic\"],\"objects\":[{\"oid\":\"$oid\",\"size\":$size}]}" \
-            "$LFS_BATCH_URL" \
-            | python3 -c "import json,sys; d=json.load(sys.stdin); print(d['objects'][0]['actions']['download']['href'])")
+        lfs_href=$(resolve_lfs_href "$oid" "$size")
         wget -q --show-progress -O "$dest" "$lfs_href"
-        rm -f "$tmp"
     else
         mv "$tmp" "$dest"
     fi
