@@ -1,0 +1,1016 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#" xmlns:alext="http://exmo.inrialpes.fr/align/ext/1.0/" xmlns:align="http://knowledgeweb.semanticweb.org/heterogeneity/alignment#" xmlns:edoal="http://ns.inria.org/edoal/1.0/#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+ <align:Alignment>
+  <align:xml>
+   yes
+  </align:xml>
+  <align:level>
+   2EDOAL
+  </align:level>
+  <align:type>
+   **
+  </align:type>
+  <align:onto1>
+   <align:Ontology rdf:about="http://example.org/ontology1/">
+    <align:location>
+     http://example.org/ontology1/
+    </align:location>
+    <align:formalism>
+     <align:Formalism align:name="owl" align:uri="http://www.w3.org/TR/owl-guide/"/>
+    </align:formalism>
+   </align:Ontology>
+  </align:onto1>
+  <align:onto2>
+   <align:Ontology rdf:about="http://example.org/ontology2/">
+    <align:location>
+     http://example.org/ontology2/
+    </align:location>
+    <align:formalism>
+     <align:Formalism align:name="owl" align:uri="http://www.w3.org/TR/owl-guide/"/>
+    </align:formalism>
+   </align:Ontology>
+  </align:onto2>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/chairman"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/conference chair"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/program committee member"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/tpcmember"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/conference member"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:inverse>
+      <edoal:Relation rdf:about="http://example.org/ontology2/conference has member person"/>
+     </edoal:inverse>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/user"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/person"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/has conflict of interest"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/conference has member person"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     0.6
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure>
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/has conference member domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/has member domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/member of conference range conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/is member of range conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/start reviewer bidding range conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/start date domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/end reviewer bidding range conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/end date domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/date domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/start date domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/date domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/end date domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/site url domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/has name domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/paper due on domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/paper due on domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/registration due on domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/registration due on domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/manuscript due on domain conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/manuscript due on domain conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/paper"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/paper full version"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/published paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/paper abstract"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/pending paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/has author"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/paper is written by author"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation>
+      <edoal:inverse>
+       <edoal:Relation rdf:about="http://example.org/ontology1/has author"/>
+      </edoal:inverse>
+     </edoal:Relation>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/author has related paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/accepted by"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/accepted paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/reject paper"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/rejected paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/submit paper"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/pending paper"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/Conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/Conference"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/has conference member"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/has member"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:about="http://example.org/ontology1/member of conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation rdf:about="http://example.org/ontology2/is member of"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/conference%20member"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/person"/>
+    </align:entity2>
+    <align:relation>
+     &lt;
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/program%20committee%20member"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/tpcmember"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Class rdf:about="http://example.org/ontology1/conference%20chair"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Class rdf:about="http://example.org/ontology2/conference%20chair"/>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+   <align:Cell>
+    <align:entity1>
+     <edoal:Relation rdf:resource="http://example.org/ontology1/member%20of%20conference"/>
+    </align:entity1>
+    <align:entity2>
+     <edoal:Relation>
+      <edoal:inverse>
+       <edoal:Relation rdf:resource="http://example.org/ontology2/conference%20has%20member"/>
+      </edoal:inverse>
+     </edoal:Relation>
+    </align:entity2>
+    <align:relation>
+     =
+    </align:relation>
+    <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+     1.0
+    </align:measure>
+   </align:Cell>
+  </align:map>
+  <align:map>
+  </align:map>
+ </align:Alignment>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/program committee member"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/tpcmember"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/chairman"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/conference chair"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/user"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/attendee"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation>
+     <edoal:inverse>
+      <edoal:Relation rdf:about="http://example.org/ontology1/has author"/>
+     </edoal:inverse>
+    </edoal:Relation>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/has member"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/is member of"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/is member of"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/author"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/person"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation>
+     <edoal:compose rdf:parseType="Collection">
+      <edoal:Relation rdf:resource="http://example.org/ontology1/has conflict of interest"/>
+     </edoal:compose>
+    </edoal:Relation>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/has biography"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/member of conference"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/is member of"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/has conference member"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/has member"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/enter conference details"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/has name"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    0.8
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/start reviewer bidding"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/start date"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    0.7
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/end reviewer bidding"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/end date"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    0.7
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/paper assignment finalized"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/paper due on"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    0.6
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/conference"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/conference"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/review"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/review"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/paper"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/paper"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/written by"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:inverse>
+     <edoal:Relation rdf:about="http://example.org/ontology2/is written by"/>
+    </edoal:inverse>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation>
+     <edoal:and rdf:parseType="Collection">
+      <edoal:RelationDomainRestriction>
+       <edoal:class>
+        <edoal:Class rdf:about="http://example.org/ontology1/Conference"/>
+       </edoal:class>
+      </edoal:RelationDomainRestriction>
+      <edoal:Relation rdf:about="http://example.org/ontology1/has conference member"/>
+     </edoal:and>
+    </edoal:Relation>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation>
+     <edoal:and rdf:parseType="Collection">
+      <edoal:RelationDomainRestriction>
+       <edoal:class>
+        <edoal:Class rdf:about="http://example.org/ontology2/Conference"/>
+       </edoal:class>
+      </edoal:RelationDomainRestriction>
+      <edoal:Relation rdf:about="http://example.org/ontology2/has member"/>
+     </edoal:and>
+    </edoal:Relation>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation>
+     <edoal:inverse>
+      <edoal:Relation rdf:about="http://example.org/ontology1/member of conference"/>
+     </edoal:inverse>
+    </edoal:Relation>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/is member of"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology1/author"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology2/author"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/has co-author"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/is written by"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/submit paper"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/has related paper"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation>
+     <edoal:inverse>
+      <edoal:Relation rdf:about="http://example.org/ontology1/has author"/>
+     </edoal:inverse>
+    </edoal:Relation>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/is written by"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="http://example.org/ontology1/co-write paper"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="http://example.org/ontology2/is written by"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Class rdf:about="http://example.org/ontology2/presenter"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Class rdf:about="http://example.org/ontology1/author"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation>
+     <edoal:inverse>
+      <edoal:Relation rdf:about="member of conference"/>
+     </edoal:inverse>
+    </edoal:Relation>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="is member of"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+ <align:map>
+  <align:Cell>
+   <align:entity1>
+    <edoal:Relation rdf:about="has conference member"/>
+   </align:entity1>
+   <align:entity2>
+    <edoal:Relation rdf:about="has member"/>
+   </align:entity2>
+   <align:relation>
+    =
+   </align:relation>
+   <align:measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">
+    1.0
+   </align:measure>
+  </align:Cell>
+ </align:map>
+</rdf:RDF>

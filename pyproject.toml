@@ -19,3 +19,6 @@ dependencies = [
 
 [tool.uv]
 extra-index-url = ["https://wheels.vllm.ai/"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

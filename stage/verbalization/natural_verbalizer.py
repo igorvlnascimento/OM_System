@@ -82,38 +82,13 @@ class NaturalVerbalizer(VerbalizerDecorator):
     def __init__(self, component: Verbalizer, strategies: list[VerbalizationStrategy]):
         self._component = component
         self.strategies = strategies
-        self.concept_dict = self.build_concept_dict([])
+        self.concept_dict = {}
 
-    def build_concept_dict(self, iris):
-        concept_dict = self._component.concept_dict
-        for verb in concept_dict.keys():
-            for strategy in self.strategies:
-                if strategy.matches(concept_dict[verb]):
-                    new_verb = strategy.verbalize(concept_dict[verb])
-                    concept_dict[verb] = new_verb
-                    break
-        return concept_dict
-    
-    def verbalize_triple(self, triple) -> tuple:
-        triple = self._component.verbalize_triple(triple)
-        new_triple = []
-        for t in triple:
-            for strategy in self.strategies:
-                if strategy.matches(t):
-                    t = strategy.verbalize(t)
-                    new_triple.append(t)
-                    break
-        return tuple(new_triple)
-    
-    def verbalize(self, iri):
-        key = str(iri)
-        if key in self.concept_dict:
-            return self.concept_dict[key]
-        return self.set_strategies(self.get_label_from_iri(key))
-    
-    def set_strategies(self, label):
-        new_label = label
+    def _compute_label(self, iri):
+        return self._apply_strategies(self._component.verbalize(iri))
+
+    def _apply_strategies(self, text):
         for strategy in self.strategies:
-            if strategy.matches(new_label):
-                new_label = strategy.verbalize(new_label)
-        return new_label
+            if strategy.matches(text):
+                return strategy.verbalize(text)
+        return text
